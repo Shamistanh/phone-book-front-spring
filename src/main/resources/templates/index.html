@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Users Dashboard</title>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Phone Book</h2>
+    <table class="table">
+        <thead>
+        <tr  th:each="member : ${members}">
+            <th>userId</th>
+            <th>name</th>
+            <th>phone</th>
+        </tr>
+        </thead>
+        <tbody id="body">
+        <tr th:each="member : ${members}">
+            <td th:text="${member.getUserId()}"></td>
+            <td th:text="${member.getName()}"></td>
+            <td th:text="${member.getPhone()}"></td>
+      </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+
+</html>
