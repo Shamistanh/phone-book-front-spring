@@ -18,9 +18,15 @@ public class HomeController {
 
     @GetMapping("index")
     public String about(Model model) {
-        log.info("getMapping -> /  (index)");
+        log.info("getMapping -> /  (index)" + phoneBookService.fetchAllUsers() );
              model.addAttribute("members", phoneBookService.fetchAllUsers());
         return "index";
+    }
+
+    @GetMapping("status")
+    public String status() {
+        log.info("getStatus -> / service is up" );
+        return "status";
     }
 
 }
