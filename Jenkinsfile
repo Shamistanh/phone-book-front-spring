@@ -37,5 +37,12 @@ pipeline {
                  }
             }
         }
+        stage('Update app in k8s') {
+                    steps {
+                    script{
+                      sh 'kubectl apply -f k8s/bb_front.yml'
+                    }
+            }
+          }
     }
 }
